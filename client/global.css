@@ -10,105 +10,105 @@
    * Tailwind CSS theme
    * tailwind.config.ts expects the following color variables to be expressed as HSL values.
    * A different format will require also updating the theme in tailwind.config.ts.
+   *
+   * Deep Space Quantum Theme:
+   * Background: #0B0F1A (HSL 220 56% 7%)
+   * Card: #121826 (HSL 220 30% 13%)
+   * Primary: #00F5FF (HSL 186 100% 50%)
+   * Secondary: #9D00FF (HSL 276 100% 50%)
+   * Text: #FFFFFF & #C5C6D0 (HSL 240 10% 78%)
   */
   :root {
-    /* Dark futuristic theme */
-    --background: 220 13% 8%;
-    --foreground: 0 0% 98%;
+    --background: 220 56% 7%;
+    --foreground: 0 0% 100%;
 
-    --card: 220 20% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 220 30% 13%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 30% 13%;
+    --popover-foreground: 0 0% 100%;
 
     --primary: 186 100% 50%;
-    --primary-foreground: 220 13% 8%;
+    --primary-foreground: 220 56% 7%;
 
-    --secondary: 280 100% 55%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 276 100% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 12% 20%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 220 15% 25%;
+    --muted-foreground: 240 10% 78%;
 
     --accent: 186 100% 50%;
-    --accent-foreground: 220 13% 8%;
+    --accent-foreground: 220 56% 7%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 18%;
+    --border: 220 25% 20%;
+    --input: 220 30% 15%;
     --ring: 186 100% 50%;
 
     --radius: 0.5rem;
 
     /* Quantum colors */
     --quantum-cyan: 186 100% 50%;
-    --quantum-purple: 280 100% 55%;
+    --quantum-purple: 276 100% 50%;
     --quantum-blue: 210 100% 50%;
-    --quantum-dark: 220 13% 8%;
+    --quantum-dark: 220 56% 7%;
+    --quantum-glow: 240 10% 78%;
 
-    --sidebar-background: 220 13% 8%;
-
-    --sidebar-foreground: 0 0% 98%;
-
+    --sidebar-background: 220 56% 7%;
+    --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 186 100% 50%;
-
-    --sidebar-primary-foreground: 220 13% 8%;
-
-    --sidebar-accent: 280 100% 55%;
-
-    --sidebar-accent-foreground: 0 0% 98%;
-
-    --sidebar-border: 220 15% 20%;
-
+    --sidebar-primary-foreground: 220 56% 7%;
+    --sidebar-accent: 276 100% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 25% 20%;
     --sidebar-ring: 186 100% 50%;
   }
 
   .dark {
-    /* Dark futuristic theme */
-    --background: 220 13% 8%;
-    --foreground: 0 0% 98%;
+    --background: 220 56% 7%;
+    --foreground: 0 0% 100%;
 
-    --card: 220 20% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 220 30% 13%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 30% 13%;
+    --popover-foreground: 0 0% 100%;
 
     --primary: 186 100% 50%;
-    --primary-foreground: 220 13% 8%;
+    --primary-foreground: 220 56% 7%;
 
-    --secondary: 280 100% 55%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 276 100% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 12% 20%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 220 15% 25%;
+    --muted-foreground: 240 10% 78%;
 
     --accent: 186 100% 50%;
-    --accent-foreground: 220 13% 8%;
+    --accent-foreground: 220 56% 7%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 18%;
+    --border: 220 25% 20%;
+    --input: 220 30% 15%;
     --ring: 186 100% 50%;
 
     /* Quantum colors */
     --quantum-cyan: 186 100% 50%;
-    --quantum-purple: 280 100% 55%;
+    --quantum-purple: 276 100% 50%;
     --quantum-blue: 210 100% 50%;
-    --quantum-dark: 220 13% 8%;
+    --quantum-dark: 220 56% 7%;
+    --quantum-glow: 240 10% 78%;
 
-    --sidebar-background: 220 13% 8%;
-    --sidebar-foreground: 0 0% 98%;
+    --sidebar-background: 220 56% 7%;
+    --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 186 100% 50%;
-    --sidebar-primary-foreground: 220 13% 8%;
-    --sidebar-accent: 280 100% 55%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 220 15% 20%;
+    --sidebar-primary-foreground: 220 56% 7%;
+    --sidebar-accent: 276 100% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 25% 20%;
     --sidebar-ring: 186 100% 50%;
   }
 }
@@ -121,8 +121,8 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      radial-gradient(circle at 20% 50%, rgba(34, 211, 238, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(157, 0, 255, 0.03) 0%, transparent 50%);
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
@@ -139,23 +139,30 @@
 
 @layer components {
   .glow-border {
-    @apply border border-quantum-cyan/30;
-    box-shadow: inset 0 0 20px rgba(34, 211, 238, 0.1);
+    @apply border border-quantum-cyan/40;
+    box-shadow: inset 0 0 20px rgba(0, 245, 255, 0.08), 0 0 30px rgba(0, 245, 255, 0.1);
   }
 
   .glow-text {
     @apply text-quantum-cyan;
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.6), 0 0 40px rgba(0, 245, 255, 0.3);
+  }
+
+  .glow-text-purple {
+    @apply text-quantum-purple;
+    text-shadow: 0 0 20px rgba(157, 0, 255, 0.6), 0 0 40px rgba(157, 0, 255, 0.3);
   }
 
   .quantum-btn {
     @apply relative px-6 py-3 font-semibold text-sm rounded-lg overflow-hidden transition-all duration-300;
-    background: linear-gradient(135deg, hsl(186, 100%, 50%) 0%, hsl(280, 100%, 55%) 100%);
-    border: 1px solid rgba(34, 211, 238, 0.3);
-    color: hsl(220, 13%, 8%);
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
+    border: 1.5px solid rgba(0, 245, 255, 0.5);
+    color: hsl(186, 100%, 50%);
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
 
     &:hover {
-      box-shadow: 0 0 30px rgba(34, 211, 238, 0.6), 0 0 60px rgba(168, 85, 247, 0.3);
+      box-shadow: 0 0 25px rgba(0, 245, 255, 0.6), 0 0 50px rgba(157, 0, 255, 0.3);
+      border-color: rgba(0, 245, 255, 0.8);
       transform: translateY(-2px);
     }
 
@@ -163,8 +170,23 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), transparent);
       animation: shimmer 3s infinite;
+      border-radius: inherit;
+    }
+  }
+
+  .quantum-btn-secondary {
+    @apply relative px-6 py-3 font-semibold text-sm rounded-lg overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, rgba(157, 0, 255, 0.1) 0%, rgba(0, 245, 255, 0.1) 100%);
+    border: 1.5px solid rgba(157, 0, 255, 0.5);
+    color: hsl(276, 100%, 50%);
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.3);
+
+    &:hover {
+      box-shadow: 0 0 25px rgba(157, 0, 255, 0.6), 0 0 50px rgba(0, 245, 255, 0.3);
+      border-color: rgba(157, 0, 255, 0.8);
+      transform: translateY(-2px);
     }
   }
 
@@ -178,15 +200,23 @@
   }
 
   .quantum-card {
-    @apply bg-card/50 border border-quantum-cyan/20 rounded-xl p-6;
-    backdrop-filter: blur(20px);
-    background: linear-gradient(135deg, rgba(220, 20%, 12%, 0.5) 0%, rgba(220, 20%, 12%, 0.3) 100%);
+    @apply border rounded-xl p-6 backdrop-blur-md;
+    background: rgba(18, 24, 38, 0.6);
+    border-color: rgba(0, 245, 255, 0.15);
+    box-shadow: inset 0 0 20px rgba(0, 245, 255, 0.05), 0 0 30px rgba(0, 245, 255, 0.05);
+  }
+
+  .quantum-card-purple {
+    @apply border rounded-xl p-6 backdrop-blur-md;
+    background: rgba(18, 24, 38, 0.6);
+    border-color: rgba(157, 0, 255, 0.15);
+    box-shadow: inset 0 0 20px rgba(157, 0, 255, 0.05), 0 0 30px rgba(157, 0, 255, 0.05);
   }
 
   .grid-pattern {
     background-image:
-      linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 }

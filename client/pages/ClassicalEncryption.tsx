@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 
 export default function ClassicalEncryption() {
@@ -83,14 +84,14 @@ export default function ClassicalEncryption() {
 
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-semibold mb-2">
+                  <label className="block text-sm font-semibold mb-2 text-foreground">
                     Enter your message:
                   </label>
                   <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Type a message to encrypt..."
-                    className="w-full h-32 px-4 py-3 bg-background/50 border border-quantum-cyan/30 rounded-lg focus:outline-none focus:border-quantum-cyan text-foreground placeholder-muted-foreground resize-none"
+                    className="w-full h-32 px-4 py-3 bg-background/50 border border-quantum-cyan/40 rounded-lg focus:outline-none focus:border-quantum-cyan focus:ring-1 focus:ring-quantum-cyan/30 text-foreground placeholder-muted-foreground resize-none transition-all duration-200"
                   />
                 </div>
 
@@ -98,13 +99,13 @@ export default function ClassicalEncryption() {
                   <button
                     onClick={handleEncrypt}
                     disabled={!message.trim()}
-                    className="flex-1 quantum-btn disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 quantum-btn disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     Encrypt
                   </button>
                   <button
                     onClick={handleReset}
-                    className="flex-1 px-6 py-3 font-semibold text-sm rounded-lg border border-muted/30 hover:border-muted/50 transition-colors"
+                    className="flex-1 quantum-btn-secondary"
                   >
                     Reset
                   </button>
@@ -119,15 +120,15 @@ export default function ClassicalEncryption() {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Algorithm:</span>
-                    <span className="font-mono">Caesar Cipher (Shift: 3)</span>
+                    <span className="font-mono text-foreground">Caesar Cipher (Shift: 3)</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Key Size:</span>
-                    <span className="font-mono">2048-bit (Simulated)</span>
+                    <span className="font-mono text-foreground">2048-bit (Simulated)</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Security Level:</span>
-                    <span className="text-yellow-400">⚠️ Low (Demo Only)</span>
+                    <span className="text-yellow-400 font-semibold">⚠️ Low (Demo)</span>
                   </div>
                 </div>
               </div>
@@ -144,11 +145,11 @@ export default function ClassicalEncryption() {
 
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-semibold mb-2">
+                      <label className="block text-sm font-semibold mb-2 text-foreground">
                         Encrypted Output:
                       </label>
-                      <div className="p-4 bg-background/50 border border-quantum-cyan/30 rounded-lg">
-                        <p className="font-mono text-sm break-all text-quantum-cyan">
+                      <div className="p-4 bg-background/50 border border-quantum-cyan/40 rounded-lg">
+                        <p className="font-mono text-sm break-all text-quantum-cyan glow-text">
                           {encrypted}
                         </p>
                       </div>
@@ -157,7 +158,7 @@ export default function ClassicalEncryption() {
                     <button
                       onClick={handleDecrypt}
                       disabled={!encrypted}
-                      className="w-full quantum-btn disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full quantum-btn disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                       Decrypt
                     </button>
@@ -167,19 +168,19 @@ export default function ClassicalEncryption() {
 
               {/* Decrypted Output */}
               {step === "decrypted" && (
-                <div className="quantum-card animate-slide-up border-quantum-purple/40">
-                  <h2 className="text-xl font-bold mb-6 text-quantum-purple">
+                <div className="quantum-card-purple animate-slide-up">
+                  <h2 className="text-xl font-bold mb-6 glow-text-purple">
                     Decrypted Message
                   </h2>
 
-                  <div className="p-4 bg-background/50 border border-quantum-purple/30 rounded-lg">
+                  <div className="p-4 bg-background/50 border border-quantum-purple/40 rounded-lg">
                     <p className="text-foreground text-lg font-semibold">
                       {decrypted}
                     </p>
                   </div>
 
-                  <div className="mt-4 p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
-                    <p className="text-sm text-green-400 font-semibold">
+                  <div className="mt-4 p-4 bg-quantum-purple/5 border border-quantum-purple/30 rounded-lg">
+                    <p className="text-sm text-quantum-purple font-semibold">
                       ✓ Message successfully decrypted!
                     </p>
                   </div>
@@ -252,16 +253,16 @@ export default function ClassicalEncryption() {
           </div>
 
           {/* Vulnerability Note */}
-          <div className="mt-12 p-6 border border-red-500/30 bg-red-500/5 rounded-xl">
-            <h3 className="font-bold text-red-400 mb-2">⚠️ Classical Cryptography Vulnerability</h3>
-            <p className="text-sm text-red-300/80">
+          <div className="mt-12 p-6 border border-quantum-purple/40 bg-quantum-purple/5 rounded-xl backdrop-blur-sm">
+            <h3 className="font-bold text-quantum-purple mb-2 glow-text-purple">⚠️ Classical Cryptography Vulnerability</h3>
+            <p className="text-sm text-muted-foreground">
               Classical encryption methods like RSA are vulnerable to quantum attacks.
               A quantum computer running Shor's algorithm could factor large numbers
               exponentially faster, breaking modern encryption in hours instead of
               millions of years.{" "}
-              <a href="/quantum-attack" className="text-quantum-cyan hover:underline">
+              <Link to="/quantum-attack" className="text-quantum-cyan hover:underline">
                 Learn how →
-              </a>
+              </Link>
             </p>
           </div>
         </div>

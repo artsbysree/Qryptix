@@ -8,7 +8,7 @@ export default function BB84() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="glow-text">BB84 Quantum Key Distribution</span>
           </h1>
-          
+
           <div className="quantum-card mb-8">
             <div className="text-6xl mb-4">🔑</div>
             <p className="text-muted-foreground text-lg mb-6">
@@ -19,9 +19,9 @@ export default function BB84() {
             </p>
           </div>
 
-          <div className="inline-block px-6 py-3 border border-quantum-cyan/50 rounded-lg text-quantum-cyan hover:bg-quantum-cyan/10 transition-colors">
+          <button className="px-6 py-3 border-1.5 border-quantum-cyan/60 rounded-lg text-quantum-cyan hover:bg-quantum-cyan/5 transition-all duration-300 hover:shadow-lg hover:shadow-quantum-cyan/20 hover:border-quantum-cyan/80 font-semibold">
             Continue implementing this page for interactive key exchange simulation
-          </div>
+          </button>
         </div>
       </section>
     </Layout>

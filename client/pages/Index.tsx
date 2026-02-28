@@ -28,11 +28,11 @@ export default function Index() {
     }
 
     const particles: Particle[] = [];
-    const particleCount = 50;
+    const particleCount = 40;
     const colors = [
-      "rgba(34, 211, 238, ", // cyan
-      "rgba(168, 85, 247, ", // purple
-      "rgba(59, 130, 246, ", // blue
+      "rgba(0, 245, 255, ", // cyan
+      "rgba(157, 0, 255, ", // purple
+      "rgba(100, 200, 255, ", // blue
     ];
 
     // Create particles
@@ -41,17 +41,17 @@ export default function Index() {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        radius: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.5 + 0.2,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        radius: Math.random() * 1.5 + 0.5,
+        opacity: Math.random() * 0.4 + 0.15,
         color: color,
       });
     }
 
     const animate = () => {
-      // Clear canvas
-      ctx.fillStyle = "rgba(220, 13%, 8%, 0.05)";
+      // Clear canvas with very slight fade
+      ctx.fillStyle = "rgba(11, 15, 26, 0.02)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw and update particles
@@ -66,27 +66,33 @@ export default function Index() {
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
 
-        // Oscillate opacity
-        particle.opacity += (Math.random() - 0.5) * 0.05;
-        particle.opacity = Math.max(0.1, Math.min(0.6, particle.opacity));
+        // Oscillate opacity gently
+        particle.opacity += (Math.random() - 0.5) * 0.03;
+        particle.opacity = Math.max(0.08, Math.min(0.5, particle.opacity));
 
-        // Draw particle
+        // Draw particle with glow
         ctx.fillStyle = particle.color + particle.opacity + ")";
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
         ctx.fill();
+
+        // Draw glow
+        ctx.fillStyle = particle.color + (particle.opacity * 0.3) + ")";
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius * 2.5, 0, Math.PI * 2);
+        ctx.fill();
       });
 
-      // Draw connections
+      // Draw subtle connections
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 150) {
-            ctx.strokeStyle = `rgba(34, 211, 238, ${0.1 * (1 - distance / 150)})`;
-            ctx.lineWidth = 0.5;
+          if (distance < 200) {
+            ctx.strokeStyle = `rgba(0, 245, 255, ${0.05 * (1 - distance / 200)})`;
+            ctx.lineWidth = 0.3;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -116,7 +122,7 @@ export default function Index() {
       <canvas
         ref={canvasRef}
         className="fixed inset-0 top-16 z-0"
-        style={{ opacity: 0.6 }}
+        style={{ opacity: 0.4 }}
       />
 
       {/* Hero section */}
@@ -124,15 +130,15 @@ export default function Index() {
         <div className="text-center max-w-4xl mx-auto">
           {/* Main title */}
           <div className="mb-8 animate-fade-in">
-            <h1 className="text-5xl sm:text-7xl font-black mb-6 tracking-tight">
+            <h1 className="text-6xl sm:text-8xl font-black mb-6 tracking-tight">
               <span className="glow-text">Qryptix</span>
             </h1>
-            <div className="h-1 w-24 bg-gradient-to-r from-quantum-cyan via-quantum-purple to-quantum-blue mx-auto mb-8 rounded-full" />
+            <div className="h-0.5 w-32 bg-gradient-to-r from-quantum-cyan via-quantum-purple to-quantum-cyan mx-auto mb-8 rounded-full" style={{ boxShadow: "0 0 30px rgba(0, 245, 255, 0.5)" }} />
           </div>
 
           {/* Subtitle */}
           <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            <h2 className="text-xl sm:text-3xl font-light text-muted-foreground mb-6">
+            <h2 className="text-xl sm:text-3xl font-light text-quantum-glow mb-6 tracking-wide">
               Securing the Future in a Post-Quantum World
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -150,7 +156,7 @@ export default function Index() {
             >
               Start Simulation
             </Link>
-            <button className="px-6 py-3 font-semibold text-sm rounded-lg border border-quantum-cyan/50 text-quantum-cyan hover:bg-quantum-cyan/10 transition-all duration-300 hover:shadow-lg">
+            <button className="px-6 py-3 font-semibold text-sm rounded-lg border-1.5 border-quantum-cyan/60 text-quantum-cyan hover:bg-quantum-cyan/5 transition-all duration-300 hover:shadow-lg hover:shadow-quantum-cyan/20 hover:border-quantum-cyan/80">
               Learn More
             </button>
           </div>
@@ -175,8 +181,8 @@ export default function Index() {
           </div>
 
           {/* Floating elements for visual interest */}
-          <div className="absolute top-1/4 left-10 w-72 h-72 bg-quantum-cyan/10 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-float" />
-          <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-quantum-purple/10 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-float" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-quantum-cyan/5 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-float" />
+          <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-quantum-purple/5 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-float" style={{ animationDelay: "2s" }} />
         </div>
       </section>
     </Layout>
@@ -191,9 +197,11 @@ interface FeatureCardProps {
 
 function FeatureCard({ title, description, icon }: FeatureCardProps) {
   return (
-    <div className="quantum-card group hover:border-quantum-cyan/40 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-quantum-cyan/10">
+    <div className="quantum-card group hover:border-quantum-cyan/50 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-quantum-cyan/20">
       <div className="text-4xl mb-4">{icon}</div>
-      <h3 className="text-lg font-bold mb-2 text-foreground">{title}</h3>
+      <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-quantum-cyan transition-colors duration-300">
+        {title}
+      </h3>
       <p className="text-sm text-muted-foreground">{description}</p>
     </div>
   );

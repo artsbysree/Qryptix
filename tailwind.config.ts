@@ -89,11 +89,21 @@ export default {
         "pulse-glow": {
           "0%, 100%": {
             opacity: "1",
-            boxShadow: "0 0 20px rgba(34, 211, 238, 0.5)",
+            boxShadow: "0 0 20px rgba(0, 245, 255, 0.5)",
           },
           "50%": {
             opacity: "0.8",
-            boxShadow: "0 0 40px rgba(34, 211, 238, 0.8)",
+            boxShadow: "0 0 40px rgba(0, 245, 255, 0.8)",
+          },
+        },
+        "pulse-glow-purple": {
+          "0%, 100%": {
+            opacity: "1",
+            boxShadow: "0 0 20px rgba(157, 0, 255, 0.5)",
+          },
+          "50%": {
+            opacity: "0.8",
+            boxShadow: "0 0 40px rgba(157, 0, 255, 0.8)",
           },
         },
         "float": {
@@ -140,6 +150,7 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "pulse-glow-purple": "pulse-glow-purple 2s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
         "quantum-particle": "quantum-particle 4s ease-in-out infinite",
         "slide-up": "slide-up 0.6s ease-out",
