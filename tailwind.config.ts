@@ -63,6 +63,14 @@ export default {
           blue: "hsl(var(--quantum-blue))",
           dark: "hsl(var(--quantum-dark))",
         },
+        text: {
+          heading: "hsl(var(--text-heading))",
+          subtitle: "hsl(var(--text-subtitle))",
+          body: "hsl(var(--text-body))",
+          muted: "hsl(var(--text-muted))",
+          "card-title": "hsl(var(--text-card-title))",
+          "card-desc": "hsl(var(--text-card-desc))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

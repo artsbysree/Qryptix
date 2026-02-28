@@ -35,7 +35,7 @@
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 15% 25%;
-    --muted-foreground: 240 10% 78%;
+    --muted-foreground: 220 8% 66%;
 
     --accent: 186 100% 50%;
     --accent-foreground: 220 56% 7%;
@@ -55,6 +55,14 @@
     --quantum-blue: 210 100% 50%;
     --quantum-dark: 220 56% 7%;
     --quantum-glow: 240 10% 78%;
+
+    /* Text colors for readability */
+    --text-heading: 0 0% 100%;
+    --text-subtitle: 0 0% 100%;
+    --text-body: 220 8% 90%;
+    --text-muted: 220 8% 82%;
+    --text-card-title: 0 0% 100%;
+    --text-card-desc: 220 8% 82%;
 
     --sidebar-background: 220 56% 7%;
     --sidebar-foreground: 0 0% 100%;
@@ -83,7 +91,7 @@
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 15% 25%;
-    --muted-foreground: 240 10% 78%;
+    --muted-foreground: 220 8% 66%;
 
     --accent: 186 100% 50%;
     --accent-foreground: 220 56% 7%;
@@ -101,6 +109,14 @@
     --quantum-blue: 210 100% 50%;
     --quantum-dark: 220 56% 7%;
     --quantum-glow: 240 10% 78%;
+
+    /* Text colors for readability */
+    --text-heading: 0 0% 100%;
+    --text-subtitle: 0 0% 100%;
+    --text-body: 220 8% 90%;
+    --text-muted: 220 8% 82%;
+    --text-card-title: 0 0% 100%;
+    --text-card-desc: 220 8% 82%;
 
     --sidebar-background: 220 56% 7%;
     --sidebar-foreground: 0 0% 100%;
@@ -145,12 +161,40 @@
 
   .glow-text {
     @apply text-quantum-cyan;
-    text-shadow: 0 0 20px rgba(0, 245, 255, 0.6), 0 0 40px rgba(0, 245, 255, 0.3);
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.25);
   }
 
   .glow-text-purple {
     @apply text-quantum-purple;
-    text-shadow: 0 0 20px rgba(157, 0, 255, 0.6), 0 0 40px rgba(157, 0, 255, 0.3);
+    text-shadow: 0 0 10px rgba(157, 0, 255, 0.25);
+  }
+
+  /* Text color utilities for readability */
+  .text-heading {
+    @apply text-white;
+  }
+
+  .text-subtitle {
+    @apply text-white;
+  }
+
+  .text-body {
+    @apply text-blue-100;
+    color: hsl(220 8% 90%);
+  }
+
+  .text-body-muted {
+    @apply text-gray-300;
+    color: hsl(220 8% 82%);
+  }
+
+  .text-card-title {
+    @apply text-white;
+  }
+
+  .text-card-desc {
+    @apply text-gray-300;
+    color: hsl(220 8% 82%);
   }
 
   .quantum-btn {
